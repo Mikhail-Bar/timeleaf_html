@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container mt-5">
+    <form method="post" th:action="@{/os_add}" th:object = "${os}">
+        <div class="mb-3">
+            <label for="name" class="form-label">Os</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}">
+            <label for="name" class="form-label">Developer</label>
+            <input type="text" class="form-control" id="developer" th:field="*{developer}">
+        </div>
+        <button type="submit" class="btn btn-primary">Add firm</button>
+        <button type="reset" class="btn btn-secondary" value="Reset">Reset</button>
+    </form>
+</div>
+</body>
+</html>

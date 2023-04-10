@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>List of firms</h3>
+<table>
+    <tr>
+        <th>Id</th><th>Name</th><th>Developer</th><th>Actions</th>
+    </tr>
+    <tbody>
+    <tr th:each="os: ${oss}">
+        <td th:utext="${os.id}"></td>
+        <td th:utext="${os.name}"></td>
+        <td th:utext="${os.developer}"></td>
+        <td>
+            <form th:action="@{/os_delete(id=${os.id})}" th:method="delete">
+                <a href="#" onclick="this.closest('form').submit();return false;" style="display: inline;">Delete</a>
+                &nbsp
+                <a th:href="@{/os_update(id=${os.id})}">Edit</a>
+            </form>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
